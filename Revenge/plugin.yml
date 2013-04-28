@@ -1,0 +1,9 @@
+name: Revenge
+main: anotherDEVer.Revenge.Revenge
+version: .1
+commands:
+  Revenge:
+    description: Kills the last entity to attack the player.
+    usage: /revenge
+    permission: Revenge.revenge
+    permission-message: You don't have <permission>
