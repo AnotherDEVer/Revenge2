@@ -34,7 +34,7 @@ public final class Revenge extends JavaPlugin
 				
 					World world = culprit.getWorld();
 				
-					world.createExplosion(x,  y, z, 2f, false, false);
+					world.createExplosion(x,  y, z, 4f, false, false);
 				}
 				catch(Exception e)
 				{
