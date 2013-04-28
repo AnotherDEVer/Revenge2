@@ -16,23 +16,30 @@ public final class Revenge extends JavaPlugin
 			{
 				Player player = (Player) sender;
 				
-				EntityDamageByEntityEvent play = (EntityDamageByEntityEvent) player.getLastDamageCause();
+				try
+				{
+					EntityDamageByEntityEvent play = (EntityDamageByEntityEvent) player.getLastDamageCause();
 				
-				Entity culprit = play.getDamager();
+					Entity culprit = play.getDamager();
 				
-				double x;
-				double y;
-				double z;
+					double x;
+					double y;
+					double z;
 				
-				Location culLoc = culprit.getLocation();
+					Location culLoc = culprit.getLocation();
 				
-				x = culLoc.getX();
-				y = culLoc.getY();
-				z = culLoc.getZ();
+					x = culLoc.getX();
+					y = culLoc.getY();
+					z = culLoc.getZ();
 				
-				World world = culprit.getWorld();
+					World world = culprit.getWorld();
 				
-				world.createExplosion(x,  y, z, 1f, false, false);
+					world.createExplosion(x,  y, z, 2f, false, false);
+				}
+				catch(Exception e)
+				{
+					player.sendMessage("You must be attacked before you can use this.");
+				}
 			}
 			
 			else
