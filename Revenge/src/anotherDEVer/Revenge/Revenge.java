@@ -15,6 +15,11 @@ public final class Revenge extends JavaPlugin
 			{
 				Player player = (Player) sender;
 				
+				EntityDamageByEntityEvent play = (EntityDamageByEntityEvent) player;
+				
+				Entity culprit = play.getDamager();
+				
+				culprit.setFireTicks(2000);
 			}
 			
 			else
