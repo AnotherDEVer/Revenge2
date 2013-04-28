@@ -4,6 +4,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.entity.*;
 import org.bukkit.command.*;
 import org.bukkit.event.entity.*;
+import org.bukkit.*;
 
 public final class Revenge extends JavaPlugin
 {
@@ -19,7 +20,19 @@ public final class Revenge extends JavaPlugin
 				
 				Entity culprit = play.getDamager();
 				
-				culprit.setFireTicks(2000);
+				double x;
+				double y;
+				double z;
+				
+				Location culLoc = culprit.getLocation();
+				
+				x = culLoc.getX();
+				y = culLoc.getY();
+				z = culLoc.getZ();
+				
+				World world = culprit.getWorld();
+				
+				world.createExplosion(x,  y, z, 10f, false, false);
 			}
 			
 			else
