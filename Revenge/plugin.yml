@@ -1,6 +1,6 @@
 name: Revenge
 main: anotherDEVer.Revenge.Revenge
-version: .1
+version: 1.0
 commands:
   Revenge:
     description: Kills the last entity to attack the player.
